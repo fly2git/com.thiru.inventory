@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="com.product.core" />
+        <module name="com.product.factory.service" />
+        <module name="com.product.mysql.adapter" />
+        <module name="com.product.test" />
+        <module name="com.product.webservice" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="com.product.core" target="1.5" />
+      <module name="com.product.factory.service" target="1.5" />
+      <module name="com.product.mysql.adapter" target="1.5" />
+      <module name="com.product.test" target="1.5" />
+      <module name="com.product.webservice" target="1.5" />
+      <module name="com.thiru.inventory" target="1.5" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

@@ -1,0 +1,20 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="inventoryMS">
+    <output-path>$PROJECT_DIR$/com.product.webservice/target</output-path>
+    <root id="root">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="Maven: javax.servlet:javax.servlet-api:3.0.1" />
+          <element id="file-copy" path="$PROJECT_DIR$/com.product.webservice/target/com.product.webservice-1.0-SNAPSHOT.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/com.product.factory.service/target/com.product.factory.service-1.0-SNAPSHOT.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/com.product.mysql.adapter/target/com.product.mysql.adapter-1.0-SNAPSHOT.jar" />
+        </element>
+        <element id="directory" name="classes">
+          <element id="module-output" name="com.product.webservice" />
+        </element>
+      </element>
+      <element id="directory" name="META-INF" />
+      <element id="javaee-facet-resources" facet="com.product.webservice/web/Web" />
+    </root>
+  </artifact>
+</component>
