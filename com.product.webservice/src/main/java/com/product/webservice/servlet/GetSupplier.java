@@ -1,6 +1,7 @@
 package com.product.webservice.servlet;
 
 import com.product.service.ProductService;
+import com.product.service.SupplierService;
 import com.product.service.factory.InventoryServiceFactory;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
@@ -17,8 +18,8 @@ import java.io.PrintWriter;
  * Created by thiruvengadanl on 02/12/17.
  */
 
-@WebServlet("/Product")
-public class GetProduct extends HttpServlet {
+@WebServlet("/Supplier")
+public class GetSupplier extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
     ApplicationContext ctx =
@@ -27,9 +28,9 @@ public class GetProduct extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-        ProductService productService = ctx.getBean(ProductService.class);
+        SupplierService supplierService = ctx.getBean(SupplierService.class);
 
         PrintWriter out=response.getWriter();
-        out.println("My Product list servlet 3.0 : \n"+productService.getProduct());
+        out.println("My Supplier list servlet 3.0 : \n"+supplierService.getSupplier());
     }
 }
