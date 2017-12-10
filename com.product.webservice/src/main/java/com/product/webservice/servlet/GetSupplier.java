@@ -18,7 +18,7 @@ import java.io.PrintWriter;
  * Created by thiruvengadanl on 02/12/17.
  */
 
-@WebServlet("/Supplier")
+@WebServlet("/supplier-servlet")
 public class GetSupplier extends HttpServlet {
     private static final long serialVersionUID = 1L;
 

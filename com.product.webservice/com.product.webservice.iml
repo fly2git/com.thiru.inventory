@@ -15,6 +15,9 @@
         </sourceRoots>
       </configuration>
     </facet>
+    <facet type="Spring" name="Spring">
+      <configuration />
+    </facet>
   </component>
   <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_5">
     <output url="file://$MODULE_DIR$/target/classes" />
@@ -27,12 +30,11 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="module" module-name="com.product.factory.service" />
     <orderEntry type="module" module-name="com.product.mysql.adapter" />
+    <orderEntry type="module" module-name="com.product.factory.service" />
     <orderEntry type="library" name="Maven: io.springfox:springfox-swagger2:2.4.0" level="project" />
     <orderEntry type="library" name="Maven: io.swagger:swagger-annotations:1.5.6" level="project" />
     <orderEntry type="library" name="Maven: io.swagger:swagger-models:1.5.6" level="project" />
-    <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.4.5" level="project" />
     <orderEntry type="library" name="Maven: io.springfox:springfox-spi:2.4.0" level="project" />
     <orderEntry type="library" name="Maven: io.springfox:springfox-core:2.4.0" level="project" />
     <orderEntry type="library" name="Maven: io.springfox:springfox-schema:2.4.0" level="project" />
@@ -54,5 +56,9 @@
     <orderEntry type="library" name="Maven: org.springframework:spring-webmvc:4.2.6.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: javax.servlet:javax.servlet-api:3.0.1" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-web:4.2.6.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-core:2.2.3" level="project" />
+    <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-databind:2.2.3" level="project" />
+    <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.2.3" level="project" />
+    <orderEntry type="library" name="Maven: mysql:mysql-connector-java:5.1.6" level="project" />
   </component>
 </module>

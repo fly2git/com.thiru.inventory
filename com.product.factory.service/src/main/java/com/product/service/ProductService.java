@@ -17,7 +17,6 @@ import org.springframework.stereotype.Service;
 @Service
 public class ProductService {
 
-
     public List<Product> getProduct(){
         return new ProductAdapterService().getProduct();
     }
