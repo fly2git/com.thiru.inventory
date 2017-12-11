@@ -5,10 +5,6 @@ package com.datasource.entity;
  */
 public class Supplier {
 
-    public Supplier(String name){
-        this.name=name;
-    }
-
     public String getName() {
         return name;
     }
@@ -17,5 +13,14 @@ public class Supplier {
         this.name = name;
     }
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    private int id;
     private String name;
 }

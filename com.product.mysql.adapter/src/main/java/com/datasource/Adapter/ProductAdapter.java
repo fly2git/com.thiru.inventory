@@ -10,6 +10,8 @@ import java.util.List;
  * Created by thiruvengadanl on 03/12/17.
  */
 public interface ProductAdapter {
-    
+
+    void saveProduct();
+    List<Product>  getProductBySupplier();
     List<Product> getProduct();
 }

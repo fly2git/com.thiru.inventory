@@ -5,7 +5,6 @@
       <module fileurl="file://$PROJECT_DIR$/com.product.core/com.product.core.iml" filepath="$PROJECT_DIR$/com.product.core/com.product.core.iml" />
       <module fileurl="file://$PROJECT_DIR$/com.product.factory.service/com.product.factory.service.iml" filepath="$PROJECT_DIR$/com.product.factory.service/com.product.factory.service.iml" />
       <module fileurl="file://$PROJECT_DIR$/com.product.mysql.adapter/com.product.mysql.adapter.iml" filepath="$PROJECT_DIR$/com.product.mysql.adapter/com.product.mysql.adapter.iml" />
-      <module fileurl="file://$PROJECT_DIR$/com.product.service/com.product.service.iml" filepath="$PROJECT_DIR$/com.product.service/com.product.service.iml" />
       <module fileurl="file://$PROJECT_DIR$/com.product.test/com.product.test.iml" filepath="$PROJECT_DIR$/com.product.test/com.product.test.iml" />
       <module fileurl="file://$PROJECT_DIR$/com.product.webservice/com.product.webservice.iml" filepath="$PROJECT_DIR$/com.product.webservice/com.product.webservice.iml" />
       <module fileurl="file://$PROJECT_DIR$/com.thiru.inventory.iml" filepath="$PROJECT_DIR$/com.thiru.inventory.iml" />

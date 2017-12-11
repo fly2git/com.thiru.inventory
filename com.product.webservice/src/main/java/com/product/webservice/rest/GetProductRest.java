@@ -11,6 +11,7 @@ import io.swagger.annotations.ApiResponses;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.ui.Model;
@@ -20,6 +21,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
 import java.util.List;
 
@@ -29,13 +32,15 @@ import java.util.List;
 
 @RestController
 @EnableWebMvc
-public class GetProductRest {
+//@Configuration
+public class GetProductRest extends WebMvcConfigurerAdapter {
     private static final long serialVersionUID = 1L;
 
-    ApplicationContext ctx =
-            new AnnotationConfigApplicationContext(InventoryServiceFactory.class);
+    //ApplicationContext ctx =
+      //      new AnnotationConfigApplicationContext(InventoryServiceFactory.class);
 
-    ProductService productService = ctx.getBean(ProductService.class);;
+    @Autowired
+    ProductService productService ;//= ctx.getBean(ProductService.class);;
 
     @ApiOperation(value = "Get all the available Products")
     @ApiResponses({@ApiResponse(code = 200, message = "Request received and response provided"),})
@@ -43,6 +48,13 @@ public class GetProductRest {
     public ModelAndView getProductList() {
         System.out.println("I am called you know...");
         return new ModelAndView("productPage", "product", productService.getProduct());
+    }
+
+    @RequestMapping(value = "/product-add", method = RequestMethod.GET,produces="application/json")
+    // @ResponseBody -- optional
+    public ResponseEntity addProduct() {
+        productService.saveProduct();
+        return new ResponseEntity(HttpStatus.OK);
     }
 
     @RequestMapping(value = "/product-rest", method = RequestMethod.GET,produces="application/json")
@@ -54,5 +66,14 @@ public class GetProductRest {
     @RequestMapping(value = "/datasource", method = RequestMethod.GET)
     public String getText() {
        return GetJDBCConnection.getConnection().toString();
+    }
+
+    @Override
+    public void addResourceHandlers(ResourceHandlerRegistry registry) {
+        registry.addResourceHandler("swagger-ui.html")
+                .addResourceLocations("classpath:/META-INF/resources/");
+
+        registry.addResourceHandler("/webjars/**")
+                .addResourceLocations("classpath:/META-INF/resources/webjars/");
     }
 }
