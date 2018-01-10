@@ -21,7 +21,10 @@ public class ProductService {
     @Autowired
     ProductAdapterService productAdapterService;
 
-    public void saveProduct(){}
+    public void saveProduct(String productName,int supplierId)
+    {
+        productAdapterService.saveProduct(productName,supplierId);
+    }
 
     public List<Product> getProduct(){
         return productAdapterService.getProduct();

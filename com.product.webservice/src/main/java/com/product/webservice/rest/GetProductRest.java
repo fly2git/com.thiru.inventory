@@ -9,16 +9,15 @@ import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.PropertySource;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
@@ -32,12 +31,16 @@ import java.util.List;
 
 @RestController
 @EnableWebMvc
+@PropertySource({"classpath:application.properties"})
 //@Configuration
 public class GetProductRest extends WebMvcConfigurerAdapter {
     private static final long serialVersionUID = 1L;
 
     //ApplicationContext ctx =
       //      new AnnotationConfigApplicationContext(InventoryServiceFactory.class);
+
+    @Value("${app.name}")
+    private String appName;
 
     @Autowired
     ProductService productService ;//= ctx.getBean(ProductService.class);;
@@ -52,9 +55,15 @@ public class GetProductRest extends WebMvcConfigurerAdapter {
 
     @RequestMapping(value = "/product-add", method = RequestMethod.GET,produces="application/json")
     // @ResponseBody -- optional
-    public ResponseEntity addProduct() {
-        productService.saveProduct();
+    public ResponseEntity addProduct(@RequestParam("productName") String productName,@RequestParam("supplierId") int supplierId) {
+        productService.saveProduct(productName,supplierId);
         return new ResponseEntity(HttpStatus.OK);
+    }
+
+    @RequestMapping(value = "/appName", method = RequestMethod.GET,produces="application/json")
+    // @ResponseBody -- optional
+    public String getAppName() {
+        return appName;
     }
 
     @RequestMapping(value = "/product-rest", method = RequestMethod.GET,produces="application/json")

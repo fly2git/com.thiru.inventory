@@ -27,18 +27,13 @@ public class GetProduct extends HttpServlet {
 
     private static final long serialVersionUID = 1L;
 
-    @Value("${app.name}")
-    private String appName;
-
-    ApplicationContext ctx =
-            new AnnotationConfigApplicationContext(InventoryServiceFactory.class);
-
-    ProductService productService = ctx.getBean(ProductService.class);;
+    @Autowired
+    ProductService productService ;
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
         PrintWriter out=response.getWriter();
-        out.println("My "+appName+" servlet 3.0 : \n"+productService.getProduct());
+        out.println("My servlet 3.0 : \n"+productService.getProduct());
     }
 }

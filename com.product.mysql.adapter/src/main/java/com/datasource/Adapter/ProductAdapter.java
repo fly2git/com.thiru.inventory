@@ -11,7 +11,7 @@ import java.util.List;
  */
 public interface ProductAdapter {
 
-    void saveProduct();
+    void saveProduct(String productName,int supplierId);
     List<Product>  getProductBySupplier();
     List<Product> getProduct();
 }

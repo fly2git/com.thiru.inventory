@@ -17,7 +17,10 @@ public class ProductAdapterService implements ProductAdapter {
     @Autowired
     ProductRepository productRepository;
 
-    public void saveProduct() {}
+    public void saveProduct(String productName,int supplierId) {
+        productRepository.execute("INSERT INTO PRODUCT (PRODUCT_NAME,SUPPLIER_ID)" +
+                " VALUES ('"+productName+"',"+supplierId+")");
+    }
 
     public List<Product> getProductBySupplier() {
         return null;
